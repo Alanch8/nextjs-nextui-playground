@@ -1,13 +1,41 @@
-import Head from 'next/head'
+import React from "react";
+import Head from "next/head";
+import { Navbar, Button, Link, Text, Card, Radio } from "@nextui-org/react";
 
 export default function Home() {
+  const [variant, setVariant] = React.useState("static");
+  const variants = ["static", "floating", "sticky"];
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Next UI Playground</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Navbar>
+        <Navbar.Brand>
+          <Text b color="inherit" hideIn="xs">
+            ACME
+          </Text>
+        </Navbar.Brand>
+        <Navbar.Content hideIn="xs">
+          <Navbar.Link href="#">Features</Navbar.Link>
+          <Navbar.Link isActive href="#">
+            Customers
+          </Navbar.Link>
+          <Navbar.Link href="#">Pricing</Navbar.Link>
+          <Navbar.Link href="#">Company</Navbar.Link>
+        </Navbar.Content>
+        <Navbar.Content>
+          <Navbar.Link color="inherit" href="#">
+            Login
+          </Navbar.Link>
+          <Navbar.Item>
+            <Button auto flat as={Link} href="#">
+              Sign Up
+            </Button>
+          </Navbar.Item>
+        </Navbar.Content>
+      </Navbar>
       <main>
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
@@ -54,8 +82,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
+          Powered by <img src="/vercel.svg" alt="Vercel" className="logo" />
         </a>
       </footer>
 
@@ -205,5 +232,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
