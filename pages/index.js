@@ -60,8 +60,7 @@ export default function Home() {
             href="https://github.com/vercel/next.js/tree/master/examples"
             className="card"
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <img src="/1.png" alt="project1" width={250}></img>
           </a>
 
           <a
